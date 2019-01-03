@@ -1,0 +1,42 @@
+<HTML>
+	<HEAD>
+		<TITLE>Login | MoneyExchage</TITLE>
+	</HEAD>
+
+	<BODY BGCOLOR="WHITE">
+		<h3>Welcome to MoneyExchange!</h3><br>
+		<FORM NAME="LoginPage" ACTION="/OnlineLoginServlet" METHOD ="post">
+			<table>
+				<tr><td>Username:</td><td><INPUT TYPE="TEXT" NAME="UsernameField" SIZE=20></td></tr>
+				<tr><td>Password:</td><td><INPUT TYPE="PASSWORD" NAME="PasswordField" SIZE=20></td></tr>
+			</table>
+
+			<P>
+				<INPUT TYPE="BUTTON" VALUE="Login" onClick="checkInputs()">
+				<INPUT TYPE="RESET" VALUE="Reset">
+			</P>
+			<h4> New User! </h4>
+			<A HREF = '/CSCI6810/SignUp.html'>Sign Up</A>
+			<!-- <A HREF='/CSCI6810/Withdraw.jsp?UserID=someone@yahoo.com'>Withdraw</A> -->
+		</FORM>
+	</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JavaScript">
+	document.LoginPage.UsernameField.focus();
+   		function checkInputs() {
+       		var Prompts = "";
+       		Username = window.document.LoginPage.UsernameField.value;
+       		Password = document.LoginPage.PasswordField.value;
+       		if (Username == "" || Password == "") {
+          		if (Username == "")
+             		Prompts +="Please enter your username!\n";
+          		if (Password == "")
+             		Prompts +="Please enter your password!\n";
+          		if (Prompts != "")
+             		window.alert(Prompts);
+       		}else {
+          		document.LoginPage.submit();
+       		}
+   	}
+</SCRIPT>
